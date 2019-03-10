@@ -61,7 +61,8 @@ app.layout = html.Div([
 ),
     html.Button(id='submit-button', n_clicks=0, children='mapudungun mew!'),
     html.Div(id='output-state')
-], style={'columnCount': 2})
+], style={'columnCount': 2},
+html.H3('Si quieres cooperar con esta iniciativa escríbeme a jxvera@gmail.com',style={'fontSize': 14}))
 
 
 @app.callback(Output('output-state', 'children'),
