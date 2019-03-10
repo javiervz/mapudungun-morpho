@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-# -*- coding: utf-8 -*-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -24,7 +17,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-server = app.server 
+server = app.server
 
 app.layout = html.Div([
     html.Label('Elige un verbo de la siguiente lista!',style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
@@ -32,7 +25,7 @@ app.layout = html.Div([
     options=[{'label':key,'value':key} for key in verbos_esp],
     value=verbos_esp[0]
 ),
-    html.Label('Número', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
+    html.Label('Elige el "número"', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
     dcc.RadioItems(id='input-2-state',
     options=[
         {'label': 'singular', 'value': 'singular'},
@@ -41,7 +34,7 @@ app.layout = html.Div([
     ],
     value='singular'
 ),
-    html.Label('Persona', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
+    html.Label('Elige los participantes: ¿qué "persona"?', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
     dcc.RadioItems(id='input-3-state',
     options=[
         {'label': 'primera', 'value': 'primera'},
@@ -50,7 +43,7 @@ app.layout = html.Div([
     ],
     value='tercera'
 ),
-    html.Label('Polaridad', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
+    html.Label('¿Es afirmativo o negativo?: elige la "polaridad"', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
     dcc.RadioItems(id='input-4-state',
     options=[
         {'label': 'positiva', 'value': 'positiva'},
@@ -58,7 +51,7 @@ app.layout = html.Div([
     ],
     value='positiva'
 ),
-    html.Label('Tiempo', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
+    html.Label('¿Cuándo ocurrió la acción?', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
     dcc.RadioItems(id='input-5-state',
     options=[
         {'label': 'no-futuro', 'value': 'no-futuro'},
@@ -87,11 +80,11 @@ app.layout = html.Div([
 #    '''.format(input1, input2, input3, input4, input5)
 
 def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
-    
+
     verbos={esp:mapu for (esp,mapu) in zip(verbos_esp,verbos_mapu)}
     base=verbos[verb_esp]
     conjugacion={'singular':{'primera':'(yo) iñche','segunda':'(tú) eymi','tercera':'(ella/él) fey'},'dual':{'primera':'(nosotras/nosotros dos) iñchiw','segunda':'(ustedes dos) eymu','tercera':'(ellas/ellos dos) feyengu'},'plural':{'primera':'(nosotras/nosotros) iñchiñ','segunda':'(ustedes) eymün','tercera':'(ellas/ellos) feyengün'}}
-    
+
     if polaridad=='positiva':## persona gramatical + base + futuro + polaridad
         if tiempo=='futuro':
             traduccion=conjugacion[numero][persona]+' '+base+'a'
@@ -102,10 +95,10 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
             traduccion=conjugacion[numero][persona]+' '+base+'la'+'ya'
         else:
             traduccion=conjugacion[numero][persona]+' '+base+'la'
-            
-        
-    
-        
+
+
+
+
     if base[-1] in consonantes: ## terminan en consonante
         if numero=='singular':
             if persona=='primera':
@@ -128,7 +121,7 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'imün'
             else:
                 traduccion=traduccion+'ingün'
-                
+
     elif base[-1]=='i': ## termina en i
         if numero=='singular':
             if persona=='primera':
@@ -151,7 +144,7 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'mün'
             else:
                 traduccion=traduccion+'ngün'
-                
+
     else: ## en otro caso
         if numero=='singular':
             if persona=='primera':
@@ -174,8 +167,8 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'ymün'
             else:
                 traduccion=traduccion+'yngün'
-                        
-    
+
+
     return 'En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" de polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+traduccion
 
 
@@ -188,9 +181,3 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-
-
-
-
-
