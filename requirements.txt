@@ -27,7 +27,6 @@ kiwisolver==1.0.1
 MarkupSafe==1.1.1
 matplotlib==3.0.0
 nbformat==4.4.0
-networkit==4.6
 networkx==2.2
 numpy==1.15.2
 pandas==0.23.4
