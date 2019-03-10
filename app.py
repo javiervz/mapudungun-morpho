@@ -34,7 +34,7 @@ app.layout = html.Div([
     ],
     value='singular'
 ),
-    html.Label('Elige los participantes: ¿qué "persona"?', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
+    html.Label('¿Quiénes participan?: elige la "persona"', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
     dcc.RadioItems(id='input-3-state',
     options=[
         {'label': 'primera', 'value': 'primera'},
