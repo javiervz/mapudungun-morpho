@@ -51,7 +51,7 @@ app.layout = html.Div([
     ],
     value='positiva'
 ),
-    html.Label('¿Cuándo ocurrió la acción?', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
+    html.Label('¿Cuándo ocurrió la acción?: elige el "tiempo"', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
     dcc.RadioItems(id='input-5-state',
     options=[
         {'label': 'no-futuro', 'value': 'no-futuro'},
