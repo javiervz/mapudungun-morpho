@@ -25,7 +25,7 @@ app.layout = html.Div([
     options=[{'label':key,'value':key} for key in verbos_esp],
     value=verbos_esp[0]
 ),
-    html.Label('Elige el "número"', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
+    html.Label('¿Cuántas personas realizan la acción?: elige el "número"', style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
     dcc.RadioItems(id='input-2-state',
     options=[
         {'label': 'singular', 'value': 'singular'},
