@@ -71,13 +71,7 @@ app.layout = html.Div([
                State('input-3-state', 'value'),
                State('input-4-state', 'value'),
                State('input-5-state', 'value')])
-#def update_output(n_clicks, input1, input2, input3, input4, input5):
-#    return u'''
-#        The Button has been pressed {} times,
-#        Input 1 is "{}",
-#        Input 2 is "{}"
-#        and Input 3 is "{}" and Input 4 is "{}" and Input 5 is "{}"
-#    '''.format(input1, input2, input3, input4, input5)
+
 
 def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
 
@@ -170,13 +164,6 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
 
 
     return 'En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"'
-
-
-#        The Button has been pressed {} times
-#        Input 1 is "{}",
-#        Input 2 is "{}"
-#        and Input 3 is "{}" and Input 4 is "{}" and Input 5 is "{}"
-#    '''.format(input1, input2, input3, input4, input5)
 
 
 if __name__ == '__main__':
