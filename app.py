@@ -99,11 +99,13 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
         if numero=='singular':
             if persona=='primera':
                 traduccion=traduccion+'ün'
-                expansion+=' '+'+'+'ün'+' '+'1SG'
+                expansion+=' '+'+'+'ün'+' '+'(1SG)'
             elif persona=='segunda':
                 traduccion=traduccion+'imi'
+                expansion+=' '+'+'+'imi'+' '+'(2SG)'
             else:
                 traduccion=traduccion+'i'
+                expansion+=' '+'+'+'i'+' '+'(3SG)'
         elif numero=='dual':
             if persona=='primera':
                 traduccion=traduccion+'iyu'
