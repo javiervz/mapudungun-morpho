@@ -119,33 +119,45 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
         else:
             if persona=='primera':
                 traduccion=traduccion+'iyiñ'
+                expansion+=' '+'+'+'iyiñ'+' '+'(1PL)'
             elif persona=='segunda':
                 traduccion=traduccion+'imün'
+                expansion+=' '+'+'+'imün'+' '+'(2PL)'
             else:
                 traduccion=traduccion+'ingün'
+                expansion+=' '+'+'+'ingün'+' '+'(3PL)'
 
     elif base[-1]=='i': ## termina en i
         if numero=='singular':
             if persona=='primera':
                 traduccion=traduccion+'n'
+                expansion+=' '+'+'+'n'+' '+'(1SG)'
             elif persona=='segunda':
                 traduccion=traduccion+'mi'
+                expansion+=' '+'+'+'mi'+' '+'(2SG)'
             else:
                 traduccion=traduccion
+                expansion+=' '+'+'+'0'+' '+'(3SG)'
         elif numero=='dual':
             if persona=='primera':
                 traduccion=traduccion+'yu'
+                expansion+=' '+'+'+'yu'+' '+'(1DUAL)'
             elif persona=='segunda':
                 traduccion=traduccion+'mu'
+                expansion+=' '+'+'+'mu'+' '+'(2DUAL)'
             else:
                 traduccion=traduccion+'ngu'
+                expansion+=' '+'+'+'ngu'+' '+'(3DUAL)'
         else:
             if persona=='primera':
                 traduccion=traduccion+'iñ'
+                expansion+=' '+'+'+'iñ'+' '+'(1PL)'
             elif persona=='segunda':
                 traduccion=traduccion+'mün'
+                expansion+=' '+'+'+'mün'+' '+'(2PL)'
             else:
                 traduccion=traduccion+'ngün'
+                expansion+=' '+'+'+'ngün'+' '+'(3PL)'
 
     else: ## en otro caso
         if numero=='singular':
