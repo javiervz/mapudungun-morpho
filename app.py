@@ -79,7 +79,7 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
     verbos={esp:mapu for (esp,mapu) in zip(verbos_esp,verbos_mapu)}
     base=verbos[verb_esp]
     conjugacion={'singular':{'primera':'iñche (yo)','segunda':'eymi (tú)','tercera':'fey (ella/él)'},'dual':{'primera':'iñchiw (nosotras/nosotros dos)','segunda':'eymu (ustedes dos)','tercera':'feyengu (ellas/ellos dos)'},'plural':{'primera':'iñchiñ (nosotras/nosotros)','segunda':'eymün (ustedes)','tercera':'feyengün (ellas/ellos)'}}
-    expansion=base
+    expansion=base+' '+'(base)'
     if polaridad=='positiva':## persona gramatical + base + futuro + polaridad
         if tiempo=='futuro':
             traduccion=conjugacion[numero][persona]+' '+base+'a'
