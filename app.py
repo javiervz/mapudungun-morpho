@@ -95,12 +95,11 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
             expansion+=' '+'+'+' '+'la'+' '+'(negación)'
 
 
-
-
     if base[-1] in consonantes: ## terminan en consonante
         if numero=='singular':
             if persona=='primera':
                 traduccion=traduccion+'ün'
+                expansion+=' '+'+'+'ün'+' '+'1SG'
             elif persona=='segunda':
                 traduccion=traduccion+'imi'
             else:
