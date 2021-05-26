@@ -183,7 +183,7 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'yngün'
 
 
-    return (html.P(['En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"',html.Br(),html.Strong('Morfología :) '+traduccion+' = '+expansion, style={'color': '#8B008B', 'fontSize': 14})]))
+    return (html.P(['En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"',html.Br(),html.Strong('Morfología :) '+traduccion.replace(conjugacion[numero][persona]+' ','')+' = '+expansion, style={'color': '#8B008B', 'fontSize': 14})]))
 
 
 
