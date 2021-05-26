@@ -167,7 +167,8 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'yngün'
 
 
-    return 'En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"'+' '+'('+expansion+')'
+    O = 'En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"'+'\n'+'('+expansion+')'
+    return '\n'.join(O.split())
 
 
 if __name__ == '__main__':
