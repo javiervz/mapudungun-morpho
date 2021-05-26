@@ -109,10 +109,13 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
         elif numero=='dual':
             if persona=='primera':
                 traduccion=traduccion+'iyu'
+                expansion+=' '+'+'+'iyu'+' '+'(1DUAL)'
             elif persona=='segunda':
                 traduccion=traduccion+'imu'
+                expansion+=' '+'+'+'imu'+' '+'(2DUAL)'
             else:
                 traduccion=traduccion+'ingu'
+                expansion+=' '+'+'+'ingu'+' '+'(3DUAL)'
         else:
             if persona=='primera':
                 traduccion=traduccion+'iyiñ'
