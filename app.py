@@ -85,6 +85,7 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
             expansion+=base + ' + a (futuro)'
         else:
             traduccion=conjugacion[numero][persona]+' '+base
+            expansion+=base 
     elif polaridad=='negativa':
         if tiempo=='futuro':
             traduccion=conjugacion[numero][persona]+' '+base+'la'+'ya'
