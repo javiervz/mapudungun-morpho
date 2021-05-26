@@ -79,7 +79,7 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
     verbos={esp:mapu for (esp,mapu) in zip(verbos_esp,verbos_mapu)}
     base=verbos[verb_esp]
     conjugacion={'singular':{'primera':'iñche (yo)','segunda':'eymi (tú)','tercera':'fey (ella/él)'},'dual':{'primera':'iñchiw (nosotras/nosotros dos)','segunda':'eymu (ustedes dos)','tercera':'feyengu (ellas/ellos dos)'},'plural':{'primera':'iñchiñ (nosotras/nosotros)','segunda':'eymün (ustedes)','tercera':'feyengün (ellas/ellos)'}}
-    
+
     if polaridad=='positiva':## persona gramatical + base + futuro + polaridad
         if tiempo=='futuro':
             traduccion=conjugacion[numero][persona]+' '+base+'a'
@@ -164,7 +164,7 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'yngün'
 
 
-    return 'En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"'
+    return 'En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"'+' '+traduccion
 
 
 if __name__ == '__main__':
