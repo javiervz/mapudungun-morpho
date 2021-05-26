@@ -60,7 +60,7 @@ app.layout = html.Div([
     value='no-futuro'
 ),
     html.Button(id='submit-button', n_clicks=0, children='mapudungun mew!'),
-    html.Div(id='output-state'),
+    html.Div(dcc.Markdown(id='output-state')),
     html.H3('Si quieres cooperar con esta iniciativa escríbeme a jxvera@gmail.com',style={'fontSize': 14})
 ], style={'columnCount': 2})
 
@@ -165,7 +165,7 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'yngün'
 
 
-    return 'En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"'+' '+expansion
+    return 'En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+**traduccion**+'"'+' '+expansion
 
 
 if __name__ == '__main__':
