@@ -163,24 +163,33 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
         if numero=='singular':
             if persona=='primera':
                 traduccion=traduccion+'n'
+                expansion+=' '+'+'+'n'+' '+'(1SG)'
             elif persona=='segunda':
                 traduccion=traduccion+'ymi'
+                expansion+=' '+'+'+'ymi'+' '+'(2SG)'
             else:
                 traduccion=traduccion+'y'
+                expansion+=' '+'+'+'y'+' '+'(3SG)'
         elif numero=='dual':
             if persona=='primera':
                 traduccion=traduccion+'yu'
+                expansion+=' '+'+'+'yu'+' '+'(1DUAL)'
             elif persona=='segunda':
                 traduccion=traduccion+'ymu'
+                expansion+=' '+'+'+'ymu'+' '+'(2DUAL)'
             else:
                 traduccion=traduccion+'yngu'
+                expansion+=' '+'+'+'yngu'+' '+'(3DUAL)'
         else:
             if persona=='primera':
                 traduccion=traduccion+'iñ'
+                expansion+=' '+'+'+'iñ'+' '+'(1PL)'
             elif persona=='segunda':
                 traduccion=traduccion+'ymün'
+                expansion+=' '+'+'+'ymün'+' '+'(2PL)'
             else:
                 traduccion=traduccion+'yngün'
+                expansion+=' '+'+'+'yngün'+' '+'(3PL)'
 
 
     return (html.P(['En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"',html.Br(),html.Strong('Morfología :) '+traduccion.replace(conjugacion[numero][persona]+' ','')+' = '+expansion, style={'color': '#8B008B', 'fontSize': 14})]))
