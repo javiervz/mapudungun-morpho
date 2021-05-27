@@ -99,97 +99,97 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
         if numero=='singular':
             if persona=='primera':
                 traduccion=traduccion+'ün'
-                expansion+=' '+'+'+'ün'+' '+'(1SG)'
+                expansion+=' '+'+'+' '+'ün'+' '+'(1SG)'
             elif persona=='segunda':
                 traduccion=traduccion+'imi'
-                expansion+=' '+'+'+'imi'+' '+'(2SG)'
+                expansion+=' '+'+'+' '+'imi'+' '+'(2SG)'
             else:
                 traduccion=traduccion+'i'
-                expansion+=' '+'+'+'i'+' '+'(3SG)'
+                expansion+=' '+'+'+' '+'i'+' '+'(3SG)'
         elif numero=='dual':
             if persona=='primera':
                 traduccion=traduccion+'iyu'
-                expansion+=' '+'+'+'iyu'+' '+'(1DUAL)'
+                expansion+=' '+'+'+' '+'iyu'+' '+'(1DUAL)'
             elif persona=='segunda':
                 traduccion=traduccion+'imu'
-                expansion+=' '+'+'+'imu'+' '+'(2DUAL)'
+                expansion+=' '+'+'+' '+'imu'+' '+'(2DUAL)'
             else:
                 traduccion=traduccion+'ingu'
-                expansion+=' '+'+'+'ingu'+' '+'(3DUAL)'
+                expansion+=' '+'+'+' '+'ingu'+' '+'(3DUAL)'
         else:
             if persona=='primera':
                 traduccion=traduccion+'iyiñ'
-                expansion+=' '+'+'+'iyiñ'+' '+'(1PL)'
+                expansion+=' '+'+'+' '+'iyiñ'+' '+'(1PL)'
             elif persona=='segunda':
                 traduccion=traduccion+'imün'
-                expansion+=' '+'+'+'imün'+' '+'(2PL)'
+                expansion+=' '+'+'+' '+'imün'+' '+'(2PL)'
             else:
                 traduccion=traduccion+'ingün'
-                expansion+=' '+'+'+'ingün'+' '+'(3PL)'
+                expansion+=' '+'+'+' '+'ingün'+' '+'(3PL)'
 
     elif base[-1]=='i': ## termina en i
         if numero=='singular':
             if persona=='primera':
                 traduccion=traduccion+'n'
-                expansion+=' '+'+'+'n'+' '+'(1SG)'
+                expansion+=' '+'+'+' '+'n'+' '+'(1SG)'
             elif persona=='segunda':
                 traduccion=traduccion+'mi'
-                expansion+=' '+'+'+'mi'+' '+'(2SG)'
+                expansion+=' '+'+'+' '+'mi'+' '+'(2SG)'
             else:
                 traduccion=traduccion
-                expansion+=' '+'+'+'0'+' '+'(3SG)'
+                expansion+=' '+'+'+' '+'0'+' '+'(3SG)'
         elif numero=='dual':
             if persona=='primera':
                 traduccion=traduccion+'yu'
-                expansion+=' '+'+'+'yu'+' '+'(1DUAL)'
+                expansion+=' '+'+'+' '+'yu'+' '+'(1DUAL)'
             elif persona=='segunda':
                 traduccion=traduccion+'mu'
-                expansion+=' '+'+'+'mu'+' '+'(2DUAL)'
+                expansion+=' '+'+'+' '+'mu'+' '+'(2DUAL)'
             else:
                 traduccion=traduccion+'ngu'
-                expansion+=' '+'+'+'ngu'+' '+'(3DUAL)'
+                expansion+=' '+'+'+' '+'ngu'+' '+'(3DUAL)'
         else:
             if persona=='primera':
                 traduccion=traduccion+'iñ'
-                expansion+=' '+'+'+'iñ'+' '+'(1PL)'
+                expansion+=' '+'+'+' '+'iñ'+' '+'(1PL)'
             elif persona=='segunda':
                 traduccion=traduccion+'mün'
-                expansion+=' '+'+'+'mün'+' '+'(2PL)'
+                expansion+=' '+'+'+' '+'mün'+' '+'(2PL)'
             else:
                 traduccion=traduccion+'ngün'
-                expansion+=' '+'+'+'ngün'+' '+'(3PL)'
+                expansion+=' '+'+'+' '+'ngün'+' '+'(3PL)'
 
     else: ## en otro caso
         if numero=='singular':
             if persona=='primera':
                 traduccion=traduccion+'n'
-                expansion+=' '+'+'+'n'+' '+'(1SG)'
+                expansion+=' '+'+'+' '+'n'+' '+'(1SG)'
             elif persona=='segunda':
                 traduccion=traduccion+'ymi'
-                expansion+=' '+'+'+'ymi'+' '+'(2SG)'
+                expansion+=' '+'+'+' '+'ymi'+' '+'(2SG)'
             else:
                 traduccion=traduccion+'y'
-                expansion+=' '+'+'+'y'+' '+'(3SG)'
+                expansion+=' '+'+'+' '+'y'+' '+'(3SG)'
         elif numero=='dual':
             if persona=='primera':
                 traduccion=traduccion+'yu'
-                expansion+=' '+'+'+'yu'+' '+'(1DUAL)'
+                expansion+=' '+'+'+' '+'yu'+' '+'(1DUAL)'
             elif persona=='segunda':
                 traduccion=traduccion+'ymu'
-                expansion+=' '+'+'+'ymu'+' '+'(2DUAL)'
+                expansion+=' '+'+'+' '+'ymu'+' '+'(2DUAL)'
             else:
                 traduccion=traduccion+'yngu'
-                expansion+=' '+'+'+'yngu'+' '+'(3DUAL)'
+                expansion+=' '+'+'+' '+'yngu'+' '+'(3DUAL)'
         else:
             if persona=='primera':
                 traduccion=traduccion+'iñ'
-                expansion+=' '+'+'+'iñ'+' '+'(1PL)'
+                expansion+=' '+'+'+' '+'iñ'+' '+'(1PL)'
             elif persona=='segunda':
                 traduccion=traduccion+'ymün'
-                expansion+=' '+'+'+'ymün'+' '+'(2PL)'
+                expansion+=' '+'+'+' '+'ymün'+' '+'(2PL)'
             else:
                 traduccion=traduccion+'yngün'
-                expansion+=' '+'+'+'yngün'+' '+'(3PL)'
+                expansion+=' '+'+'+' '+'yngün'+' '+'(3PL)'
 
 
     return (html.P(['En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"',html.Br(),html.Strong('Morfología :) '+traduccion.replace(conjugacion[numero][persona]+' ','')+' = '+expansion, style={'color': '#8B008B', 'fontSize': 14})]))
