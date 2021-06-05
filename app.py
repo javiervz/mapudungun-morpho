@@ -124,8 +124,8 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'imvn'
                 expansion+=' '+'+'+' '+'imvn'+' '+'(2PL)'
             else:
-                traduccion=traduccion+'ingvn'
-                expansion+=' '+'+'+' '+'ingvn'+' '+'(3PL)'
+                traduccion=traduccion+'igvn'
+                expansion+=' '+'+'+' '+'igvn'+' '+'(3PL)'
 
     elif base[-1]=='i': ## termina en i
         if numero=='singular':
@@ -146,8 +146,8 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'mu'
                 expansion+=' '+'+'+' '+'mu'+' '+'(2DUAL)'
             else:
-                traduccion=traduccion+'ngu'
-                expansion+=' '+'+'+' '+'ngu'+' '+'(3DUAL)'
+                traduccion=traduccion+'gu'
+                expansion+=' '+'+'+' '+'gu'+' '+'(3DUAL)'
         else:
             if persona=='primera':
                 traduccion=traduccion+'iñ'
@@ -156,8 +156,8 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'mvn'
                 expansion+=' '+'+'+' '+'mvn'+' '+'(2PL)'
             else:
-                traduccion=traduccion+'ngvn'
-                expansion+=' '+'+'+' '+'ngvn'+' '+'(3PL)'
+                traduccion=traduccion+'gvn'
+                expansion+=' '+'+'+' '+'gvn'+' '+'(3PL)'
 
     else: ## en otro caso
         if numero=='singular':
@@ -178,8 +178,8 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'ymu'
                 expansion+=' '+'+'+' '+'ymu'+' '+'(2DUAL)'
             else:
-                traduccion=traduccion+'yngu'
-                expansion+=' '+'+'+' '+'yngu'+' '+'(3DUAL)'
+                traduccion=traduccion+'ygu'
+                expansion+=' '+'+'+' '+'ygu'+' '+'(3DUAL)'
         else:
             if persona=='primera':
                 traduccion=traduccion+'iñ'
@@ -188,8 +188,8 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'ymvn'
                 expansion+=' '+'+'+' '+'ymvn'+' '+'(2PL)'
             else:
-                traduccion=traduccion+'yngvn'
-                expansion+=' '+'+'+' '+'yngvn'+' '+'(3PL)'
+                traduccion=traduccion+'ygvn'
+                expansion+=' '+'+'+' '+'ygvn'+' '+'(3PL)'
 
 
     return (html.P(['En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"',html.Br(),html.Strong('Morfología :) '+traduccion.replace(conjugacion[numero][persona]+' ','')+' = '+expansion, style={'color': '#8B008B', 'fontSize': 14})]))
