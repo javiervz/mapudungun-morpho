@@ -5,7 +5,7 @@ from dash.dependencies import Input, Output, State
 import pandas as pd
 
 ## verbo en espanol a conjugacion en mapudungun
-verbos=pd.read_csv('verbs.csv',header=0,sep='\t')
+verbos=pd.read_csv('verbs.csv',header=0,sep=',')
 verbos = verbos.sort_values(['esp', 'mapu'], ascending=[1, 0])
 verbos_esp=[verbo for verbo in verbos.esp]
 verbos_mapu=[verbo for verbo in verbos.mapu]
