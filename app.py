@@ -59,7 +59,7 @@ app.layout = html.Div([
     ],
     value='no-futuro'
 ),
-    html.Button(id='submit-button', n_clicks=0, children='mapudungun mew!'),
+    html.Button(id='submit-button', n_clicks=0, children='mapuzugun mew!'),
     html.Div(id='output-state'),
     html.H3('Si quieres cooperar con esta iniciativa escríbeme a jxvera@gmail.com',style={'fontSize': 14})
 ], style={'columnCount': 2})
@@ -192,7 +192,7 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 expansion+=' '+'+'+' '+'ygvn'+' '+'(3PL)'
 
 
-    return (html.P(['En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"',html.Br(),html.Strong('Morfología :) '+traduccion.replace(conjugacion[numero][persona]+' ','')+' = '+expansion, style={'color': '#8B008B', 'fontSize': 14})]))
+    return (html.P(['En mapuzugun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"',html.Br(),html.Strong('Morfología :) '+traduccion.replace(conjugacion[numero][persona]+' ','')+' = '+expansion, style={'color': '#8B008B', 'fontSize': 14})]))
 
 
 
