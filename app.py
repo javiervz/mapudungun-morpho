@@ -10,7 +10,7 @@ verbos = verbos.sort_values(['esp', 'mapu'], ascending=[1, 0])
 verbos_esp=[verbo for verbo in verbos.esp]
 verbos_mapu=[verbo for verbo in verbos.mapu]
 #verbos={esp:mapu for (esp,mapu) in zip(verbos_esp,verbos_mapu)}
-personas={'singular':{'primera':'iñche','segunda':'eymi','tercera':'fey'},'dual':{'primera':'iñchiw','segunda':'eymu','tercera':'feyengu'},'plural':{'primera':'iñchiñ','segunda':'eymün','tercera':'feyengün'}}
+personas={'singular':{'primera':'iñche','segunda':'eymi','tercera':'fey'},'dual':{'primera':'iñcu','segunda':'eymu','tercera':'feyegu'},'plural':{'primera':'iñciñ','segunda':'eymvn','tercera':'feyegvn'}}
 consonantes=['n','w']
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -78,7 +78,7 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
 
     verbos={esp:mapu for (esp,mapu) in zip(verbos_esp,verbos_mapu)}
     base=verbos[verb_esp]
-    conjugacion={'singular':{'primera':'iñche (yo)','segunda':'eymi (tú)','tercera':'fey (ella/él)'},'dual':{'primera':'iñchiw (nosotras/nosotros dos)','segunda':'eymu (ustedes dos)','tercera':'feyengu (ellas/ellos dos)'},'plural':{'primera':'iñchiñ (nosotras/nosotros)','segunda':'eymün (ustedes)','tercera':'feyengün (ellas/ellos)'}}
+    conjugacion={'singular':{'primera':'iñce (yo)','segunda':'eymi (tú)','tercera':'fey (ella/él)'},'dual':{'primera':'iñcu (nosotras/nosotros dos)','segunda':'eymu (ustedes dos)','tercera':'feyegu (ellas/ellos dos)'},'plural':{'primera':'iñciñ (nosotras/nosotros)','segunda':'eymvn (ustedes)','tercera':'feyegvn (ellas/ellos)'}}
     expansion=base+' '+'(base)'
     if polaridad=='positiva':## persona gramatical + base + futuro + polaridad
         if tiempo=='futuro':
@@ -98,8 +98,8 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
     if base[-1] in consonantes: ## terminan en consonante
         if numero=='singular':
             if persona=='primera':
-                traduccion=traduccion+'ün'
-                expansion+=' '+'+'+' '+'ün'+' '+'(1SG)'
+                traduccion=traduccion+'vn'
+                expansion+=' '+'+'+' '+'vn'+' '+'(1SG)'
             elif persona=='segunda':
                 traduccion=traduccion+'imi'
                 expansion+=' '+'+'+' '+'imi'+' '+'(2SG)'
@@ -121,11 +121,11 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'iyiñ'
                 expansion+=' '+'+'+' '+'iyiñ'+' '+'(1PL)'
             elif persona=='segunda':
-                traduccion=traduccion+'imün'
-                expansion+=' '+'+'+' '+'imün'+' '+'(2PL)'
+                traduccion=traduccion+'imvn'
+                expansion+=' '+'+'+' '+'imvn'+' '+'(2PL)'
             else:
-                traduccion=traduccion+'ingün'
-                expansion+=' '+'+'+' '+'ingün'+' '+'(3PL)'
+                traduccion=traduccion+'ingvn'
+                expansion+=' '+'+'+' '+'ingvn'+' '+'(3PL)'
 
     elif base[-1]=='i': ## termina en i
         if numero=='singular':
@@ -153,11 +153,11 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'iñ'
                 expansion+=' '+'+'+' '+'iñ'+' '+'(1PL)'
             elif persona=='segunda':
-                traduccion=traduccion+'mün'
-                expansion+=' '+'+'+' '+'mün'+' '+'(2PL)'
+                traduccion=traduccion+'mvn'
+                expansion+=' '+'+'+' '+'mvn'+' '+'(2PL)'
             else:
-                traduccion=traduccion+'ngün'
-                expansion+=' '+'+'+' '+'ngün'+' '+'(3PL)'
+                traduccion=traduccion+'ngvn'
+                expansion+=' '+'+'+' '+'ngvn'+' '+'(3PL)'
 
     else: ## en otro caso
         if numero=='singular':
@@ -185,11 +185,11 @@ def verb_to_mapudungun(n_clicks, verb_esp,numero,persona,polaridad,tiempo):
                 traduccion=traduccion+'iñ'
                 expansion+=' '+'+'+' '+'iñ'+' '+'(1PL)'
             elif persona=='segunda':
-                traduccion=traduccion+'ymün'
-                expansion+=' '+'+'+' '+'ymün'+' '+'(2PL)'
+                traduccion=traduccion+'ymvn'
+                expansion+=' '+'+'+' '+'ymvn'+' '+'(2PL)'
             else:
-                traduccion=traduccion+'yngün'
-                expansion+=' '+'+'+' '+'yngün'+' '+'(3PL)'
+                traduccion=traduccion+'yngvn'
+                expansion+=' '+'+'+' '+'yngvn'+' '+'(3PL)'
 
 
     return (html.P(['En mapudungun, el verbo "{}" conjugado en "{}" persona "{}" en polaridad "{}" y tiempo "{}" se dice'.format(verb_esp,persona,numero,polaridad,tiempo)+' '+'"'+traduccion+'"',html.Br(),html.Strong('Morfología :) '+traduccion.replace(conjugacion[numero][persona]+' ','')+' = '+expansion, style={'color': '#8B008B', 'fontSize': 14})]))
