@@ -20,7 +20,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 app.layout = html.Div([
-    html.Label('Elige un verbo de la siguiente lista!',style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
+    html.Label('Elige un verbo de la lista!',style={'color': 'black', 'fontSize': 18, 'font-weight': 'bold'}),
     dcc.Dropdown(id='input-1-state',
     options=[{'label':key,'value':key} for key in verbos_esp],
     value=verbos_esp[0]
